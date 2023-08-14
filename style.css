@@ -1,0 +1,63 @@
+body{ 
+    font-family: 'Open Sans', sans-serif;
+    background-color: antiquewhite;
+}
+
+#navBar {
+    display: flex;
+    align-items: center;
+    /* This fine Change Colors if you want */
+    background-color: rgb(205, 171, 126);
+    margin: -10px;
+    margin-bottom: 10px;
+}
+
+
+#logo {
+    display: flex;
+    justify-content: flex-start;
+    margin-right: 25%;
+    
+}
+/* If anyone thinks the search bar 
+needs to bigger feel free to change it  */
+#searchBar {
+    width:35%;
+    height:25px;
+}
+
+#submitBtn {
+    width:55px;
+    height:30px;
+    margin-right: 20%;
+}
+
+#title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+}
+
+.about{
+    display: flex;
+    /* This might change some stuff with the column */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#abouttext {
+    width: 700px;
+    font-size: 15px;
+    padding-left: 12px;
+    padding-right:12px
+}
+
+#welcome{
+    background-image: url("https://img.freepik.com/free-photo/modern-metropolis-skyline-chongqing-china-chongqing-panorama_1112-1911.jpg?w=2000");
+    margin: -5px;
+    width: 2000px;
+    height: 1400px;
+}
+/* Work on the width/height and margins  */ 
