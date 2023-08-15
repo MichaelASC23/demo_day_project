@@ -17,7 +17,6 @@ let atlantaC = document.getElementById("atlanta_Container");
 let chicagoC = document.getElementById("chicago_Container");
 let washingtonC = document.getElementById("washingtondc_Container");
 
-
 //Nav bar
 
 // Home Button
@@ -31,28 +30,23 @@ logo.onclick = function(event){
 
 //Search button
 searchBtn.onclick = function(event){
+    console.log("Clicked Button");
     event.preventDefault();
 
-    
+    sessionStorage.setItem('label', input.value)
+
     // New York Search Conditional
     if(input.value == "New York" || input.value == "new york"){
         // Change from main.html to city.html
+       
         location.href = "city.html";
+        
         
         // Define Url
         const newyorkurl = "https://api.teleport.org/api/urban_areas/teleport%3Adr5rs/details/"
+        
         //Display changes from none to block, while the rest will be turn into none
-        newyorkC.style.display = "flex";
-        miamiC.style.display = "none";
-        bostonC.style.display = "none";
-        losC.style.display = "none";
-        seattleC.style.display = "none";
-        denverC.style.display = "none";
-        sanC.style.display = "none";
-        atlantaC.style.display = "none";
-        chicagoC.style.display = "none";
-        washingtonC.style.display = "none";
-
+        newyorkC.style.display = "block";
 
     }
 
@@ -62,6 +56,8 @@ searchBtn.onclick = function(event){
         // Change from main.html to city.html
         location.href = "city.html";
 
+        //Define Url 
+        const miamiurl = "https://api.teleport.org/api/urban_areas/teleport%3Adhwfx/details/";
 
         //Display changes from none to block, while the rest will be turn into none
         newyorkC.style.display = "none";
@@ -81,18 +77,27 @@ searchBtn.onclick = function(event){
     if(input.value =="Boston" || input.value == "boston") {
         // Change from main.html to city.html
         location.href = "city.html";
+
+        //Define Url 
+        const bostonurl = "https://api.teleport.org/api/urban_areas/teleport%3Adrt2z/details/";
     }
 
     // Los Angeles Search Conditional 
     if(input.value == "Los Angeles" || input.value == "los angeles") {
         // Change from main.html to city.html
         location.href = "city.html";
+
+        //Define Url 
+        const losurl = "https://api.teleport.org/api/urban_areas/teleport%3A9q5ct/details/";
     }
 
     // Seattle Search Conditional
     if(input.value == "Seattle" || input.value == "seattle") {
         // Change from main.html to city.html
         location.href = "city.html";
+
+        //Define Url 
+        const seattleurl = "https://api.teleport.org/api/urban_areas/teleport%3Ac23nb/details/";
     }
 
     // Denver Search Conditional 
@@ -100,29 +105,46 @@ searchBtn.onclick = function(event){
         // Change from main.html to city.html
         location.href = "city.html";
 
-    // San Fransisco Search Conditional
+        //Define Url 
+        const denverurl = "https://api.teleport.org/api/urban_areas/teleport%3A9xj65/details/";
     }
-    if(input.vlaue == 'San Fransisco' || input.value == 'san fransisco') {
+
+    // San Francisco Search Conditional
+    if(input.value == 'San Francisco' || input.value == 'san francisco') {
         // Change from main.html to city.html
         location.href = 'city.html'
+       
+        //Define Url 
+        const sanurl = "https://api.teleport.org/api/urban_areas/teleport%3A9q8yy/details/";
+
+    }
 
     // Atlanta Search Conditional    
-    }
-    if(input.vlaue == 'Atlanta' || input.value == 'atlanta') {
+    if(input.value == 'Atlanta' || input.value == 'atlanta') {
         // Change from main.html to city.html
         location.href = 'city.html'
+
+        //Define Url 
+        const atlantaurl = "https://api.teleport.org/api/urban_areas/teleport%3Adjgzz/details/";
+    }
 
     // Chicago Search Conditional    
-    }
-    if(input.vlaue == 'Chicago' || input.value == 'chicago') {
+    if(input.value == 'Chicago' || input.value == 'chicago') {
         // Change from main.html to city.html
         location.href = 'city.html'
 
-    // Washington DC Search Conditional    
+        //Define Url 
+        const chicagourl = "https://api.teleport.org/api/urban_areas/teleport%3Adp3wn/details/";
+    
     }
-    if(input.value == 'Washington DC' || input.valye == 'washington dc') {
+
+    // Washington DC Search Conditional    
+    if(input.value == 'Washington DC' || input.value == 'washington dc') {
         // Change from main.html to city.html
         location.href = 'city.html'
+
+        //Define Url 
+        const washingtonsurl = "https://api.teleport.org/api/urban_areas/teleport%3Adqcjq/details/"
     }
 
 

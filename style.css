@@ -79,65 +79,65 @@ html {
 /* City.HTML  */
 
 #newyork_Container {
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
 }
 
 #miami_Container {
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
 }
 
 #boston_Container {
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
 }
 
 #losangeles_Container {
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
 }
 
 #seattle_Container {
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
 }
 
 #denver_Container {
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
 }
 
 #sanfrancisco_Container {
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
 }
 
 #atlanta_Container {
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
 }
 
 #chicago_Container {
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
 }
 
 #washingtondc_Container {
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
 }
 
 iframe{
-    display: none;
+    /* display: none; */
 }
