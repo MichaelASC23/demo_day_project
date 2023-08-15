@@ -18,6 +18,7 @@ body{
     justify-content: flex-start;
     margin-right: 25%;
 }
+
 /* If anyone thinks the search bar 
 needs to bigger feel free to change it  */
 #searchBar {
@@ -35,8 +36,9 @@ needs to bigger feel free to change it  */
 
 #welcome{
     background-image: url("images/cityview.png");
-    margin: -10px;
-    width: 101.9%;
+    margin-top: -10px;
+    margin-left: -10px;
+    width: 1693px;
     height: 1000px;
     display: flex;
     justify-content: center;
@@ -71,6 +73,9 @@ needs to bigger feel free to change it  */
     padding-right:12px
 }
 
+html {
+    scroll-behavior: smooth;
+}
 /* City.HTML  */
 
 #newyork_Container {
@@ -131,4 +136,8 @@ needs to bigger feel free to change it  */
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+iframe{
+    display: none;
 }

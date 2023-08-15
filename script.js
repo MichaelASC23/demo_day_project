@@ -1,10 +1,24 @@
-// References
+// References on main.html
 let logo = document.getElementById("logo");
 let about = document.getElementById("about");
 let welcome = document.getElementById("welcome");
 let input = document.getElementById("searchBar");
 let searchBtn = document.getElementById("submitBtn");
+// Reference on city.html
+// Containers 
+let newyorkC = document.getElementById("newyork_Container");
+let miamiC = document.getElementById("miami_Container");
+let bostonC = document.getElementById("boston_Container");
+let losC = document.getElementById("losangeles_Container");
+let seattleC = document.getElementById("seattle_Container");
+let denverC = document.getElementById("denver_Container");
+let sanC = document.getElementById("sanfrancisco_Container");
+let atlantaC = document.getElementById("atlanta_Container");
+let chicagoC = document.getElementById("chicago_Container");
+let washingtonC = document.getElementById("washingtondc_Container");
 
+
+//Nav bar
 
 // Home Button
 logo.onclick = function(event){
@@ -12,25 +26,34 @@ logo.onclick = function(event){
     location.href = "main.html";
 }
 
-//About button 
-about.onclick = function(event){
-    event.preventDefault();
-    
-}
+
+
 
 //Search button
 searchBtn.onclick = function(event){
     event.preventDefault();
 
-    // Defining Url
     
-
-
     // New York Search Conditional
     if(input.value == "New York" || input.value == "new york"){
         // Change from main.html to city.html
         location.href = "city.html";
+        
+        // Define Url
+        const newyorkurl = "https://api.teleport.org/api/urban_areas/teleport%3Adr5rs/details/"
         //Display changes from none to block, while the rest will be turn into none
+        newyorkC.style.display = "flex";
+        miamiC.style.display = "none";
+        bostonC.style.display = "none";
+        losC.style.display = "none";
+        seattleC.style.display = "none";
+        denverC.style.display = "none";
+        sanC.style.display = "none";
+        atlantaC.style.display = "none";
+        chicagoC.style.display = "none";
+        washingtonC.style.display = "none";
+
+
     }
 
 
@@ -38,6 +61,20 @@ searchBtn.onclick = function(event){
     if(input.value == "Miami" || input.value == "miami") {
         // Change from main.html to city.html
         location.href = "city.html";
+
+
+        //Display changes from none to block, while the rest will be turn into none
+        newyorkC.style.display = "none";
+        miamiC.style.display = "flex";
+        bostonC.style.display = "none";
+        losC.style.display = "none";
+        seattleC.style.display = "none";
+        denverC.style.display = "none";
+        sanC.style.display = "none";
+        atlantaC.style.display = "none";
+        chicagoC.style.display = "none";
+        washingtonC.style.display = "none";
+
     }
 
     //Boston Search Conditional
@@ -90,3 +127,4 @@ searchBtn.onclick = function(event){
 
 
 }
+
