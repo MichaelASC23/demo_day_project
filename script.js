@@ -22,7 +22,7 @@ let washingtonC = document.getElementById("washingtondc_Container");
 // Home Button
 logo.onclick = function(event){
     event.preventDefault();
-    location.href = "main.html";
+    location.href = "index.html";
 }
 
 
@@ -35,7 +35,7 @@ searchBtn.onclick = function(event){
 
     // New York Search Conditional
     if(input.value == "New York" || input.value == "new york"){
-        // Change from main.html to city.html
+       
        
         location.href = "city.html";
         

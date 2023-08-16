@@ -73,7 +73,7 @@ if(searchvalue == "Washington DC" || searchvalue == "washington dc"){
 // Home Button
 logo.onclick = function(event){
     event.preventDefault();
-    location.href = "main.html";
+    location.href = "index.html";
 }
 
 //Search button
