@@ -19,6 +19,9 @@ let atlantaC = document.getElementById("atlanta_Container");
 let chicagoC = document.getElementById("chicago_Container");
 let washingtonC = document.getElementById("washingtondc_Container");
 
+// City Array 
+let cityarray = ["New York", "Miami", "Boston", "Los Angeles", "Seattle", "Denver", "San Francisco", "Atlanta", "Chicago", "Washington DC"];
+
 // Data from script.js -->  to city.js 
 let searchvalue = sessionStorage.getItem('label');
 sessionStorage.getItem('label')
@@ -64,8 +67,9 @@ if(searchvalue == "Washington DC" || searchvalue == "washington dc"){
     searchWashington();
 }
 
-//Nav bar
 
+
+//Nav bar
 // Home Button
 logo.onclick = function(event){
     event.preventDefault();
@@ -138,9 +142,20 @@ searchBtn.onclick = function(event){
         searchWashington();
     }
 
-
-
 }
+
+
+//Reference to Div inside the city container
+let newyork_div = document.getElementById("newyork_div");
+let miami_div = document.getElementById("miami_div");
+let boston_div = document.getElementById("boston_div");
+let los_div = document.getElementById("losangeles_div");
+let seattle_div = document.getElementById("seattle_div");
+let denver_div = document.getElementById("denver_div");
+let sanfran_div = document.getElementById("sanfran_div");
+let atlanta_div = document.getElementById("atlanta_div");
+let chicago_div = document.getElementById("chicago_div");
+let washington_div = document.getElementById("washington_div");
 
 // Search  and API Fetch Function for New York
 
@@ -173,7 +188,78 @@ function searchNewYork(){
             // Housing 
             console.log("Apt.-Rent Large:",cityJSON.categories[8].data[0].currency_dollar_value, "Apt.-Rent Medium:", cityJSON.categories[8].data[1].currency_dollar_value, "Apt.-Rent Small", cityJSON.categories[8].data[2].currency_dollar_value);
             //Safety
-            console.log("Gun Death Rate:", cityJSON.categories[16].data[1].int_value, "Gun Ownership Rate:", cityJSON.categories[16].data[5].int_value);
+            console.log("Gun Death Rate:", cityJSON.categories[16].data[1].int_value, "Gun Ownership Rate:", cityJSON.categories[16].data[3].int_value);
+
+            // Creating a div inside newyork_div
+            let educationDiv = document.createElement("div");
+            newyork_div.appendChild(educationDiv);
+
+            // Creating a header saying Education in the city number in the array
+            let education_h1 = document.createElement("h1");
+            education_h1.innerHTML = "Education in " + cityarray[0];
+            educationDiv.appendChild(education_h1);
+
+            //University Data
+            let educationH = document.createElement("h2");
+            educationH.innerHTML = "University: " + cityJSON.categories[6].data[16].string_value;
+            educationDiv.appendChild(educationH);
+            // Ranking
+            let educationRank = document.createElement("h2");
+            educationRank.innerHTML = "Ranked: " + cityJSON.categories[6].data[17].int_value;
+            educationDiv.appendChild(educationRank);
+            // PISA Math Mean
+            let pisamath = document.createElement("h2");
+            pisamath.innerHTML = "PISA Math Mean: " + cityJSON.categories[6].data[3].float_value
+            // PISA Reading Mean
+            let pisaread = document.createElement("h2");
+            pisaread.innerHTML = "PISA Reading Mean: " + cityJSON.categories[6].data[6].float_value
+            // PISA Science Mean
+            let pisasci = document.createElement("h2");
+            pisasci.innerHTML = "PISA Science Mean: " + cityJSON.categories[6].data[9].float_value
+
+
+            //Housing
+            let housingDiv = document.createElement("div");
+            newyork_div.appendChild(housingDiv);
+
+            //Creating Header
+            let housing_h1 = document.createElement("h1");
+            housing_h1.innerHTML = "Housing Cost in " + cityarray[0];
+            housingDiv.appendChild(housing_h1);
+
+            //Housing Data
+            // Large
+            let housingL = document.createElement("h2");
+            housingL.innerHTML = "Apartment-Rent Large: $" + cityJSON.categories[8].data[0].currency_dollar_value;
+            housingDiv.appendChild(housingL)
+            // Medium
+            let housingM = document.createElement("h2");
+            housingM.innerHTML = "Apartment-Rent Medium: $" + cityJSON.categories[8].data[1].currency_dollar_value;
+            housingDiv.appendChild(housingM);
+            // Small
+            let housingS = document.createElement("h2");
+            housingS.innerHTML = "Apartment-Rent Small: $" + cityJSON.categories[8].data[2].currency_dollar_value;
+            housingDiv.appendChild(housingS);
+
+
+            //Safety Div 
+            let safetyDiv = document.createElement("div");
+            newyork_div.appendChild(safetyDiv)
+
+            //Safety
+            let safety_h1 = document.createElement("h1");
+            safety_h1.innerHTML = "Safety in " + cityarray[0];
+            safetyDiv.appendChild(safety_h1);
+            //Safety Data
+            //Gun Death Rate
+            let safetyD = document.createElement("h2");
+            safetyD.innerHTML = "Gun-Death-Rate: " + cityJSON.categories[16].data[1].int_value;
+            safetyDiv.appendChild(safetyD);
+            //Gun Ownership Rate 
+            let safetyG = document.createElement("h2");
+            safetyG.innerHTML = "Gun-Ownership-Rate: " + cityJSON.categories[16].data[3].int_value;
+            safetyDiv.appendChild(safetyG);
+
         });
 }
 
@@ -208,6 +294,77 @@ function searchMiami(){
             console.log("Apt.-Rent Large:",cityJSON.categories[8].data[0].currency_dollar_value, "Apt.-Rent Medium:", cityJSON.categories[8].data[1].currency_dollar_value, "Apt.-Rent Small", cityJSON.categories[8].data[2].currency_dollar_value);
             //Safety
             console.log("Gun Death Rate:", cityJSON.categories[16].data[1].int_value, "Gun Ownership Rate:", cityJSON.categories[16].data[5].int_value);
+        
+            // Creating a div inside
+            let educationDiv = document.createElement("div");
+            miami_div.appendChild(educationDiv);
+
+            // Creating a header saying Education in the city number in the array
+            let education_h1 = document.createElement("h1");
+            education_h1.innerHTML = "Education in " + cityarray[1];
+            educationDiv.appendChild(education_h1);
+
+
+            //University 
+            let educationH = document.createElement("h2");
+            educationH.innerHTML = "University: " + cityJSON.categories[6].data[16].string_value;
+            educationDiv.appendChild(educationH);
+            // Ranking
+            let educationRank = document.createElement("h2");
+            educationRank.innerHTML = "Ranked: " + cityJSON.categories[6].data[17].int_value;
+            educationDiv.appendChild(educationRank);
+            // PISA Math Mean
+            let pisamath = document.createElement("h2");
+            pisamath.innerHTML = "PISA Math Mean: " + cityJSON.categories[6].data[3].float_value
+            // PISA Reading Mean
+            let pisaread = document.createElement("h2");
+            pisaread.innerHTML = "PISA Reading Mean: " + cityJSON.categories[6].data[6].float_value
+            // PISA Science Mean
+            let pisasci = document.createElement("h2");
+            pisasci.innerHTML = "PISA Science Mean: " + cityJSON.categories[6].data[9].float_value
+
+            //Housing
+            let housingDiv = document.createElement("div");
+            miami_div.appendChild(housingDiv);
+
+            //Creating Header
+            let housing_h1 = document.createElement("h1");
+            housing_h1.innerHTML = "Housing Cost in " + cityarray[0];
+            housingDiv.appendChild(housing_h1);
+
+            //Housing Data
+            // Large
+            let housingL = document.createElement("h2");
+            housingL.innerHTML = "Apartment-Rent Large: $" + cityJSON.categories[8].data[0].currency_dollar_value;
+            housingDiv.appendChild(housingL)
+            // Medium
+            let housingM = document.createElement("h2");
+            housingM.innerHTML = "Apartment-Rent Medium: $" + cityJSON.categories[8].data[1].currency_dollar_value;
+            housingDiv.appendChild(housingM);
+            // Small
+            let housingS = document.createElement("h2");
+            housingS.innerHTML = "Apartment-Rent Small: $" + cityJSON.categories[8].data[2].currency_dollar_value;
+            housingDiv.appendChild(housingS);
+
+            //Safety Div 
+            let safetyDiv = document.createElement("div");
+            miami_div.appendChild(safetyDiv)
+
+            //Safety
+            let safety_h1 = document.createElement("h1");
+            safety_h1.innerHTML = "Safety in " + cityarray[1];
+            safetyDiv.appendChild(safety_h1);
+            //Safety Data
+            //Gun Death Rate
+            let safetyD = document.createElement("h2");
+            safetyD.innerHTML = "Gun-Death-Rate: " + cityJSON.categories[16].data[1].int_value;
+            safetyDiv.appendChild(safetyD);
+            //Gun Ownership Rate 
+            let safetyG = document.createElement("h2");
+            safetyG.innerHTML = "Gun-Ownership-Rate: " + cityJSON.categories[16].data[3].int_value;
+            safetyDiv.appendChild(safetyG);
+
+            
         });
 
 }
@@ -243,6 +400,76 @@ function searchBoston(){
            console.log("Apt.-Rent Large:",cityJSON.categories[8].data[0].currency_dollar_value, "Apt.-Rent Medium:", cityJSON.categories[8].data[1].currency_dollar_value, "Apt.-Rent Small", cityJSON.categories[8].data[2].currency_dollar_value);
            //Safety
            console.log("Gun Death Rate:", cityJSON.categories[16].data[1].int_value, "Gun Ownership Rate:", cityJSON.categories[16].data[5].int_value);
+        
+            // Creating a div inside
+            let educationDiv = document.createElement("div");
+            boston_div.appendChild(educationDiv);
+
+            // Creating a header saying Education in the city number in the array
+            let education_h1 = document.createElement("h1");
+            education_h1.innerHTML = "Education in " + cityarray[2];
+            educationDiv.appendChild(education_h1);
+
+
+            //University 
+            let educationH = document.createElement("h2");
+            educationH.innerHTML = "University: " + cityJSON.categories[6].data[16].string_value;
+            educationDiv.appendChild(educationH);
+            // Ranking
+            let educationRank = document.createElement("h2");
+            educationRank.innerHTML = "Ranked: " + cityJSON.categories[6].data[17].int_value;
+            educationDiv.appendChild(educationRank);
+            // PISA Math Mean
+            let pisamath = document.createElement("h2");
+            pisamath.innerHTML = "PISA Math Mean: " + cityJSON.categories[6].data[3].float_value
+            // PISA Reading Mean
+            let pisaread = document.createElement("h2");
+            pisaread.innerHTML = "PISA Reading Mean: " + cityJSON.categories[6].data[6].float_value
+            // PISA Science Mean
+            let pisasci = document.createElement("h2");
+            pisasci.innerHTML = "PISA Science Mean: " + cityJSON.categories[6].data[9].float_value
+
+            //Housing
+            let housingDiv = document.createElement("div");
+            boston_div.appendChild(housingDiv);
+
+            //Creating Header
+            let housing_h1 = document.createElement("h1");
+            housing_h1.innerHTML = "Housing Cost in " + cityarray[2];
+            housingDiv.appendChild(housing_h1);
+
+            //Housing Data
+            // Large
+            let housingL = document.createElement("h2");
+            housingL.innerHTML = "Apartment-Rent Large: $" + cityJSON.categories[8].data[0].currency_dollar_value;
+            housingDiv.appendChild(housingL)
+            // Medium
+            let housingM = document.createElement("h2");
+            housingM.innerHTML = "Apartment-Rent Medium: $" + cityJSON.categories[8].data[1].currency_dollar_value;
+            housingDiv.appendChild(housingM);
+            // Small
+            let housingS = document.createElement("h2");
+            housingS.innerHTML = "Apartment-Rent Small: $" + cityJSON.categories[8].data[2].currency_dollar_value;
+            housingDiv.appendChild(housingS);
+            
+
+            //Safety Div 
+            let safetyDiv = document.createElement("div");
+            boston_div.appendChild(safetyDiv)
+
+            //Safety
+            let safety_h1 = document.createElement("h1");
+            safety_h1.innerHTML = "Safety in " + cityarray[2];
+            safetyDiv.appendChild(safety_h1);
+            //Safety Data
+            //Gun Death Rate
+            let safetyD = document.createElement("h2");
+            safetyD.innerHTML = "Gun-Death-Rate: " + cityJSON.categories[16].data[1].int_value;
+            safetyDiv.appendChild(safetyD);
+            //Gun Ownership Rate 
+            let safetyG = document.createElement("h2");
+            safetyG.innerHTML = "Gun-Ownership-Rate: " + cityJSON.categories[16].data[3].int_value;
+            safetyDiv.appendChild(safetyG);            
         });
 }
 
@@ -278,6 +505,76 @@ function searchLosAngeles() {
             console.log("Apt.-Rent Large:",cityJSON.categories[8].data[0].currency_dollar_value, "Apt.-Rent Medium:", cityJSON.categories[8].data[1].currency_dollar_value, "Apt.-Rent Small", cityJSON.categories[8].data[2].currency_dollar_value);
             //Safety
             console.log("Gun Death Rate:", cityJSON.categories[16].data[1].int_value, "Gun Ownership Rate:", cityJSON.categories[16].data[5].int_value);
+            
+            // Creating a div inside
+            let educationDiv = document.createElement("div");
+            LosAngeles_div.appendChild(educationDiv);
+
+            // Creating a header saying Education in the city number in the array
+            let education_h1 = document.createElement("h1");
+            education_h1.innerHTML = "Education in " + cityarray[3];
+            educationDiv.appendChild(education_h1);
+
+
+            //University 
+            let educationH = document.createElement("h2");
+            educationH.innerHTML = "University: " + cityJSON.categories[6].data[16].string_value;
+            educationDiv.appendChild(educationH);
+            // Ranking
+            let educationRank = document.createElement("h2");
+            educationRank.innerHTML = "Ranked: " + cityJSON.categories[6].data[17].int_value;
+            educationDiv.appendChild(educationRank);
+            // PISA Math Mean
+            let pisamath = document.createElement("h2");
+            pisamath.innerHTML = "PISA Math Mean: " + cityJSON.categories[6].data[3].float_value
+            // PISA Reading Mean
+            let pisaread = document.createElement("h2");
+            pisaread.innerHTML = "PISA Reading Mean: " + cityJSON.categories[6].data[6].float_value
+            // PISA Science Mean
+            let pisasci = document.createElement("h2");
+            pisasci.innerHTML = "PISA Science Mean: " + cityJSON.categories[6].data[9].float_value
+
+            //Housing
+            let housingDiv = document.createElement("div");
+            LosAngeles_div.appendChild(housingDiv);
+
+            //Creating Header
+            let housing_h1 = document.createElement("h1");
+            housing_h1.innerHTML = "Housing Cost in " + cityarray[3];
+            housingDiv.appendChild(housing_h1);
+
+            //Housing Data
+            // Large
+            let housingL = document.createElement("h2");
+            housingL.innerHTML = "Apartment-Rent Large: $" + cityJSON.categories[8].data[0].currency_dollar_value;
+            housingDiv.appendChild(housingL)
+            // Medium
+            let housingM = document.createElement("h2");
+            housingM.innerHTML = "Apartment-Rent Medium: $" + cityJSON.categories[8].data[1].currency_dollar_value;
+            housingDiv.appendChild(housingM);
+            // Small
+            let housingS = document.createElement("h2");
+            housingS.innerHTML = "Apartment-Rent Small: $" + cityJSON.categories[8].data[2].currency_dollar_value;
+            housingDiv.appendChild(housingS);
+    
+            
+            //Safety Div 
+            let safetyDiv = document.createElement("div");
+            LosAngeles_div.appendChild(safetyDiv)
+
+            //Safety
+            let safety_h1 = document.createElement("h1");
+            safety_h1.innerHTML = "Safety in " + cityarray[3];
+            safetyDiv.appendChild(safety_h1);
+            //Safety Data
+            //Gun Death Rate
+            let safetyD = document.createElement("h2");
+            safetyD.innerHTML = "Gun-Death-Rate: " + cityJSON.categories[16].data[1].int_value;
+            safetyDiv.appendChild(safetyD);
+            //Gun Ownership Rate 
+            let safetyG = document.createElement("h2");
+            safetyG.innerHTML = "Gun-Ownership-Rate: " + cityJSON.categories[16].data[3].int_value;
+            safetyDiv.appendChild(safetyG);
         });
 
 }
@@ -313,6 +610,76 @@ function searchSeattle() {
            console.log("Apt.-Rent Large:",cityJSON.categories[8].data[0].currency_dollar_value, "Apt.-Rent Medium:", cityJSON.categories[8].data[1].currency_dollar_value, "Apt.-Rent Small", cityJSON.categories[8].data[2].currency_dollar_value);
            //Safety
            console.log("Gun Death Rate:", cityJSON.categories[16].data[1].int_value, "Gun Ownership Rate:", cityJSON.categories[16].data[5].int_value);
+        
+            // Creating a div inside
+            let educationDiv = document.createElement("div");
+            seattle_div.appendChild(educationDiv);
+
+            // Creating a header saying Education in the city number in the array
+            let education_h1 = document.createElement("h1");
+            education_h1.innerHTML = "Education in " + cityarray[4];
+            educationDiv.appendChild(education_h1);
+
+
+            //University 
+            let educationH = document.createElement("h2");
+            educationH.innerHTML = "University: " + cityJSON.categories[6].data[16].string_value;
+            educationDiv.appendChild(educationH);
+            // Ranking
+            let educationRank = document.createElement("h2");
+            educationRank.innerHTML = "Ranked: " + cityJSON.categories[6].data[17].int_value;
+            educationDiv.appendChild(educationRank);
+            // PISA Math Mean
+            let pisamath = document.createElement("h2");
+            pisamath.innerHTML = "PISA Math Mean: " + cityJSON.categories[6].data[3].float_value
+            // PISA Reading Mean
+            let pisaread = document.createElement("h2");
+            pisaread.innerHTML = "PISA Reading Mean: " + cityJSON.categories[6].data[6].float_value
+            // PISA Science Mean
+            let pisasci = document.createElement("h2");
+            pisasci.innerHTML = "PISA Science Mean: " + cityJSON.categories[6].data[9].float_value
+
+            //Housing
+            let housingDiv = document.createElement("div");
+            seattle_div.appendChild(housingDiv);
+
+            //Creating Header
+            let housing_h1 = document.createElement("h1");
+            housing_h1.innerHTML = "Housing Cost in " + cityarray[4];
+            housingDiv.appendChild(housing_h1);
+
+            //Housing Data
+            // Large
+            let housingL = document.createElement("h2");
+            housingL.innerHTML = "Apartment-Rent Large: $" + cityJSON.categories[8].data[0].currency_dollar_value;
+            housingDiv.appendChild(housingL)
+            // Medium
+            let housingM = document.createElement("h2");
+            housingM.innerHTML = "Apartment-Rent Medium: $" + cityJSON.categories[8].data[1].currency_dollar_value;
+            housingDiv.appendChild(housingM);
+            // Small
+            let housingS = document.createElement("h2");
+            housingS.innerHTML = "Apartment-Rent Small: $" + cityJSON.categories[8].data[2].currency_dollar_value;
+            housingDiv.appendChild(housingS);
+
+            
+            //Safety Div 
+            let safetyDiv = document.createElement("div");
+            seattle_div.appendChild(safetyDiv)
+
+            //Safety
+            let safety_h1 = document.createElement("h1");
+            safety_h1.innerHTML = "Safety in " + cityarray[4];
+            safetyDiv.appendChild(safety_h1);
+            //Safety Data
+            //Gun Death Rate
+            let safetyD = document.createElement("h2");
+            safetyD.innerHTML = "Gun-Death-Rate: " + cityJSON.categories[16].data[1].int_value;
+            safetyDiv.appendChild(safetyD);
+            //Gun Ownership Rate 
+            let safetyG = document.createElement("h2");
+            safetyG.innerHTML = "Gun-Ownership-Rate: " + cityJSON.categories[16].data[3].int_value;
+            safetyDiv.appendChild(safetyG);
         });
 
 }
@@ -350,6 +717,76 @@ function searchDenver() {
             console.log("Apt.-Rent Large:",cityJSON.categories[8].data[0].currency_dollar_value, "Apt.-Rent Medium:", cityJSON.categories[8].data[1].currency_dollar_value, "Apt.-Rent Small", cityJSON.categories[8].data[2].currency_dollar_value);
             //Safety
             console.log("Gun Death Rate:", cityJSON.categories[16].data[1].int_value, "Gun Ownership Rate:", cityJSON.categories[16].data[5].int_value);
+        
+            // Creating a div inside
+            let educationDiv = document.createElement("div");
+            denver_div.appendChild(educationDiv);
+
+            // Creating a header saying Education in the city number in the array
+            let education_h1 = document.createElement("h1");
+            education_h1.innerHTML = "Education in " + cityarray[5];
+            educationDiv.appendChild(education_h1);
+
+
+            //University 
+            let educationH = document.createElement("h2");
+            educationH.innerHTML = "University: N/A"
+            educationDiv.appendChild(educationH);
+            // Ranking
+            let educationRank = document.createElement("h2");
+            educationRank.innerHTML = "Ranked: N/A"
+            educationDiv.appendChild(educationRank);
+            // PISA Math Mean
+            let pisamath = document.createElement("h2");
+            pisamath.innerHTML = "PISA Math Mean: " + cityJSON.categories[6].data[3].float_value
+            // PISA Reading Mean
+            let pisaread = document.createElement("h2");
+            pisaread.innerHTML = "PISA Reading Mean: " + cityJSON.categories[6].data[6].float_value
+            // PISA Science Mean
+            let pisasci = document.createElement("h2");
+            pisasci.innerHTML = "PISA Science Mean: " + cityJSON.categories[6].data[9].float_value
+
+            //Housing
+            let housingDiv = document.createElement("div");
+            denver_div.appendChild(housingDiv);
+
+            //Creating Header
+            let housing_h1 = document.createElement("h1");
+            housing_h1.innerHTML = "Housing Cost in " + cityarray[5];
+            housingDiv.appendChild(housing_h1);
+
+            //Housing Data
+            // Large
+            let housingL = document.createElement("h2");
+            housingL.innerHTML = "Apartment-Rent Large: $" + cityJSON.categories[8].data[0].currency_dollar_value;
+            housingDiv.appendChild(housingL)
+            // Medium
+            let housingM = document.createElement("h2");
+            housingM.innerHTML = "Apartment-Rent Medium: $" + cityJSON.categories[8].data[1].currency_dollar_value;
+            housingDiv.appendChild(housingM);
+            // Small
+            let housingS = document.createElement("h2");
+            housingS.innerHTML = "Apartment-Rent Small: $" + cityJSON.categories[8].data[2].currency_dollar_value;
+            housingDiv.appendChild(housingS);
+
+            
+            //Safety Div 
+            let safetyDiv = document.createElement("div");
+            denver_div.appendChild(safetyDiv)
+
+            //Safety
+            let safety_h1 = document.createElement("h1");
+            safety_h1.innerHTML = "Safety in " + cityarray[5];
+            safetyDiv.appendChild(safety_h1);
+            //Safety Data
+            //Gun Death Rate
+            let safetyD = document.createElement("h2");
+            safetyD.innerHTML = "Gun-Death-Rate: " + cityJSON.categories[16].data[1].int_value;
+            safetyDiv.appendChild(safetyD);
+            //Gun Ownership Rate 
+            let safetyG = document.createElement("h2");
+            safetyG.innerHTML = "Gun-Ownership-Rate: " + cityJSON.categories[16].data[3].int_value;
+            safetyDiv.appendChild(safetyG);
         });
 
 }
@@ -386,7 +823,76 @@ function searchSanFrans() {
            console.log("Apt.-Rent Large:",cityJSON.categories[8].data[0].currency_dollar_value, "Apt.-Rent Medium:", cityJSON.categories[8].data[1].currency_dollar_value, "Apt.-Rent Small", cityJSON.categories[8].data[2].currency_dollar_value);
            //Safety
            console.log("Gun Death Rate:", cityJSON.categories[16].data[1].int_value, "Gun Ownership Rate:", cityJSON.categories[16].data[5].int_value);
-       });
+       
+           // Creating a div inside
+           let educationDiv = document.createElement("div");
+           SanFrans_div.appendChild(educationDiv);
+
+           // Creating a header saying Education in the city number in the array
+           let education_h1 = document.createElement("h1");
+           education_h1.innerHTML = "Education in " + cityarray[6];
+           educationDiv.appendChild(education_h1);
+
+
+           //University 
+           let educationH = document.createElement("h2");
+           educationH.innerHTML = "University: " + cityJSON.categories[6].data[16].string_value;
+           educationDiv.appendChild(educationH);
+           // Ranking
+           let educationRank = document.createElement("h2");
+           educationRank.innerHTML = "Ranked: " + cityJSON.categories[6].data[17].int_value;
+           educationDiv.appendChild(educationRank);
+           // PISA Math Mean
+           let pisamath = document.createElement("h2");
+           pisamath.innerHTML = "PISA Math Mean: " + cityJSON.categories[6].data[3].float_value
+           // PISA Reading Mean
+           let pisaread = document.createElement("h2");
+           pisaread.innerHTML = "PISA Reading Mean: " + cityJSON.categories[6].data[6].float_value
+           // PISA Science Mean
+           let pisasci = document.createElement("h2");
+           pisasci.innerHTML = "PISA Science Mean: " + cityJSON.categories[6].data[9].float_value
+
+           //Housing
+           let housingDiv = document.createElement("div");
+           sanFrans_div.appendChild(housingDiv);
+
+           //Creating Header
+           let housing_h1 = document.createElement("h1");
+           housing_h1.innerHTML = "Housing Cost in " + cityarray[6];
+           housingDiv.appendChild(housing_h1);
+
+           //Housing Data
+           // Large
+           let housingL = document.createElement("h2");
+           housingL.innerHTML = "Apartment-Rent Large: $" + cityJSON.categories[8].data[0].currency_dollar_value;
+           housingDiv.appendChild(housingL)
+           // Medium
+           let housingM = document.createElement("h2");
+           housingM.innerHTML = "Apartment-Rent Medium: $" + cityJSON.categories[8].data[1].currency_dollar_value;
+           housingDiv.appendChild(housingM);
+           // Small
+           let housingS = document.createElement("h2");
+           housingS.innerHTML = "Apartment-Rent Small: $" + cityJSON.categories[8].data[2].currency_dollar_value;
+           housingDiv.appendChild(housingS);
+
+            //Safety Div 
+            let safetyDiv = document.createElement("div");
+            sanFrans_div.appendChild(safetyDiv)
+
+            //Safety
+            let safety_h1 = document.createElement("h1");
+            safety_h1.innerHTML = "Safety in " + cityarray[6];
+            safetyDiv.appendChild(safety_h1);
+            //Safety Data
+            //Gun Death Rate
+            let safetyD = document.createElement("h2");
+            safetyD.innerHTML = "Gun-Death-Rate: " + cityJSON.categories[16].data[1].int_value;
+            safetyDiv.appendChild(safetyD);
+            //Gun Ownership Rate 
+            let safetyG = document.createElement("h2");
+            safetyG.innerHTML = "Gun-Ownership-Rate: " + cityJSON.categories[16].data[3].int_value;
+            safetyDiv.appendChild(safetyG);
+        });
 
 }
 
@@ -421,7 +927,77 @@ function searchAtlanta() {
            console.log("Apt.-Rent Large:",cityJSON.categories[8].data[0].currency_dollar_value, "Apt.-Rent Medium:", cityJSON.categories[8].data[1].currency_dollar_value, "Apt.-Rent Small", cityJSON.categories[8].data[2].currency_dollar_value);
            //Safety
            console.log("Gun Death Rate:", cityJSON.categories[16].data[1].int_value, "Gun Ownership Rate:", cityJSON.categories[16].data[5].int_value);
-       });
+       
+                   // Creating a div inside
+           let educationDiv = document.createElement("div");
+           atlanta_div.appendChild(educationDiv);
+
+           // Creating a header saying Education in the city number in the array
+           let education_h1 = document.createElement("h1");
+           education_h1.innerHTML = "Education in " + cityarray[7];
+           educationDiv.appendChild(education_h1);
+
+
+           //University 
+           let educationH = document.createElement("h2");
+           educationH.innerHTML = "University: " + cityJSON.categories[6].data[16].string_value;
+           educationDiv.appendChild(educationH);
+           // Ranking
+           let educationRank = document.createElement("h2");
+           educationRank.innerHTML = "Ranked: " + cityJSON.categories[6].data[17].int_value;
+           educationDiv.appendChild(educationRank);
+           // PISA Math Mean
+           let pisamath = document.createElement("h2");
+           pisamath.innerHTML = "PISA Math Mean: " + cityJSON.categories[6].data[3].float_value
+           // PISA Reading Mean
+           let pisaread = document.createElement("h2");
+           pisaread.innerHTML = "PISA Reading Mean: " + cityJSON.categories[6].data[6].float_value
+           // PISA Science Mean
+           let pisasci = document.createElement("h2");
+           pisasci.innerHTML = "PISA Science Mean: " + cityJSON.categories[6].data[9].float_value
+
+           //Housing
+           let housingDiv = document.createElement("div");
+           atlanta_div.appendChild(housingDiv);
+
+           //Creating Header
+           let housing_h1 = document.createElement("h1");
+           housing_h1.innerHTML = "Housing Cost in " + cityarray[7];
+           housingDiv.appendChild(housing_h1);
+
+           //Housing Data
+           // Large
+           let housingL = document.createElement("h2");
+           housingL.innerHTML = "Apartment-Rent Large: $" + cityJSON.categories[8].data[0].currency_dollar_value;
+           housingDiv.appendChild(housingL)
+           // Medium
+           let housingM = document.createElement("h2");
+           housingM.innerHTML = "Apartment-Rent Medium: $" + cityJSON.categories[8].data[1].currency_dollar_value;
+           housingDiv.appendChild(housingM);
+           // Small
+           let housingS = document.createElement("h2");
+           housingS.innerHTML = "Apartment-Rent Small: $" + cityJSON.categories[8].data[2].currency_dollar_value;
+           housingDiv.appendChild(housingS);
+
+           
+            //Safety Div 
+            let safetyDiv = document.createElement("div");
+            atlanta_div.appendChild(safetyDiv)
+
+            //Safety
+            let safety_h1 = document.createElement("h1");
+            safety_h1.innerHTML = "Safety in " + cityarray[7];
+            safetyDiv.appendChild(safety_h1);
+            //Safety Data
+            //Gun Death Rate
+            let safetyD = document.createElement("h2");
+            safetyD.innerHTML = "Gun-Death-Rate: " + cityJSON.categories[16].data[1].int_value;
+            safetyDiv.appendChild(safetyD);
+            //Gun Ownership Rate 
+            let safetyG = document.createElement("h2");
+            safetyG.innerHTML = "Gun-Ownership-Rate: " + cityJSON.categories[16].data[3].int_value;
+            safetyDiv.appendChild(safetyG);
+        });
 
 }
 
@@ -456,7 +1032,78 @@ function searchChicago() {
            console.log("Apt.-Rent Large:",cityJSON.categories[8].data[0].currency_dollar_value, "Apt.-Rent Medium:", cityJSON.categories[8].data[1].currency_dollar_value, "Apt.-Rent Small", cityJSON.categories[8].data[2].currency_dollar_value);
            //Safety
            console.log("Gun Death Rate:", cityJSON.categories[16].data[1].int_value, "Gun Ownership Rate:", cityJSON.categories[16].data[5].int_value);
-       });
+       
+           // Creating a div inside
+           let educationDiv = document.createElement("div");
+           chicago_div.appendChild(educationDiv);
+
+           // Creating a header saying Education in the city number in the array
+           let education_h1 = document.createElement("h1");
+           education_h1.innerHTML = "Education in " + cityarray[8];
+           educationDiv.appendChild(education_h1);
+
+
+           //University 
+           let educationH = document.createElement("h2");
+           educationH.innerHTML = "University: " + cityJSON.categories[6].data[16].string_value;
+           educationDiv.appendChild(educationH);
+           // Ranking
+           let educationRank = document.createElement("h2");
+           educationRank.innerHTML = "Ranked: " + cityJSON.categories[6].data[17].int_value;
+           educationDiv.appendChild(educationRank);
+           // PISA Math Mean
+           let pisamath = document.createElement("h2");
+           pisamath.innerHTML = "PISA Math Mean: " + cityJSON.categories[6].data[3].float_value
+           // PISA Reading Mean
+           let pisaread = document.createElement("h2");
+           pisaread.innerHTML = "PISA Reading Mean: " + cityJSON.categories[6].data[6].float_value
+           // PISA Science Mean
+           let pisasci = document.createElement("h2");
+           pisasci.innerHTML = "PISA Science Mean: " + cityJSON.categories[6].data[9].float_value
+           
+           //Housing
+           let housingDiv = document.createElement("div");
+           chicago_div.appendChild(housingDiv);
+
+           //Creating Header
+           let housing_h1 = document.createElement("h1");
+           housing_h1.innerHTML = "Housing Cost in " + cityarray[8];
+           housingDiv.appendChild(housing_h1);
+
+           //Housing Data
+           // Large
+           let housingL = document.createElement("h2");
+           housingL.innerHTML = "Apartment-Rent Large: $" + cityJSON.categories[8].data[0].currency_dollar_value;
+           housingDiv.appendChild(housingL)
+           // Medium
+           let housingM = document.createElement("h2");
+           housingM.innerHTML = "Apartment-Rent Medium: $" + cityJSON.categories[8].data[1].currency_dollar_value;
+           housingDiv.appendChild(housingM);
+           // Small
+           let housingS = document.createElement("h2");
+           housingS.innerHTML = "Apartment-Rent Small: $" + cityJSON.categories[8].data[2].currency_dollar_value;
+           housingDiv.appendChild(housingS);
+
+           
+            //Safety Div 
+            let safetyDiv = document.createElement("div");
+            chicago_div.appendChild(safetyDiv)
+
+            //Safety
+            let safety_h1 = document.createElement("h1");
+            safety_h1.innerHTML = "Safety in " + cityarray[8];
+            safetyDiv.appendChild(safety_h1);
+            //Safety Data
+            //Gun Death Rate
+            let safetyD = document.createElement("h2");
+            safetyD.innerHTML = "Gun-Death-Rate: " + cityJSON.categories[16].data[1].int_value;
+            safetyDiv.appendChild(safetyD);
+            //Gun Ownership Rate 
+            let safetyG = document.createElement("h2");
+            safetyG.innerHTML = "Gun-Ownership-Rate: " + cityJSON.categories[16].data[3].int_value;
+            safetyDiv.appendChild(safetyG);
+
+        });
 
 }
 
@@ -491,6 +1138,76 @@ function searchWashington() {
            console.log("Apt.-Rent Large:",cityJSON.categories[8].data[0].currency_dollar_value, "Apt.-Rent Medium:", cityJSON.categories[8].data[1].currency_dollar_value, "Apt.-Rent Small", cityJSON.categories[8].data[2].currency_dollar_value);
            //Safety
            console.log("Gun Death Rate:", cityJSON.categories[16].data[1].int_value, "Gun Ownership Rate:", cityJSON.categories[16].data[5].int_value);
-       });
+       
+           // Creating a div inside
+           let educationDiv = document.createElement("div");
+           washington_div.appendChild(educationDiv);
+
+           // Creating a header saying Education in the city number in the array
+           let education_h1 = document.createElement("h1");
+           education_h1.innerHTML = "Education in " + cityarray[8];
+           educationDiv.appendChild(education_h1);
+
+
+           //University 
+           let educationH = document.createElement("h2");
+           educationH.innerHTML = "University: " + cityJSON.categories[6].data[16].string_value;
+           educationDiv.appendChild(educationH);
+           // Ranking
+           let educationRank = document.createElement("h2");
+           educationRank.innerHTML = "Ranked: " + cityJSON.categories[6].data[17].int_value;
+           educationDiv.appendChild(educationRank);
+           // PISA Math Mean
+           let pisamath = document.createElement("h2");
+           pisamath.innerHTML = "PISA Math Mean: " + cityJSON.categories[6].data[3].float_value
+           // PISA Reading Mean
+           let pisaread = document.createElement("h2");
+           pisaread.innerHTML = "PISA Reading Mean: " + cityJSON.categories[6].data[6].float_value
+           // PISA Science Mean
+           let pisasci = document.createElement("h2");
+           pisasci.innerHTML = "PISA Science Mean: " + cityJSON.categories[6].data[9].float_value
+
+           //Housing
+           let housingDiv = document.createElement("div");
+           washington_div.appendChild(housingDiv);
+
+           //Creating Header
+           let housing_h1 = document.createElement("h1");
+           housing_h1.innerHTML = "Housing Cost in " + cityarray[9];
+           housingDiv.appendChild(housing_h1);
+
+           //Housing Data
+           // Large
+           let housingL = document.createElement("h2");
+           housingL.innerHTML = "Apartment-Rent Large: $" + cityJSON.categories[8].data[0].currency_dollar_value;
+           housingDiv.appendChild(housingL)
+           // Medium
+           let housingM = document.createElement("h2");
+           housingM.innerHTML = "Apartment-Rent Medium: $" + cityJSON.categories[8].data[1].currency_dollar_value;
+           housingDiv.appendChild(housingM);
+           // Small
+           let housingS = document.createElement("h2");
+           housingS.innerHTML = "Apartment-Rent Small: $" + cityJSON.categories[8].data[2].currency_dollar_value;
+           housingDiv.appendChild(housingS);
+
+           
+            //Safety Div 
+            let safetyDiv = document.createElement("div");
+            washington_div.appendChild(safetyDiv)
+
+            //Safety
+            let safety_h1 = document.createElement("h1");
+            safety_h1.innerHTML = "Safety in " + cityarray[9];
+            safetyDiv.appendChild(safety_h1);
+            //Safety Data
+            //Gun Death Rate
+            let safetyD = document.createElement("h2");
+            safetyD.innerHTML = "Gun-Death-Rate: " + cityJSON.categories[16].data[1].int_value;
+            safetyDiv.appendChild(safetyD);
+            //Gun Ownership Rate 
+            let safetyG = document.createElement("h2");
+            safetyG.innerHTML = "Gun-Ownership-Rate: " + cityJSON.categories[16].data[3].int_value;
+            safetyDiv.appendChild(safetyG);
+        });
 
 }

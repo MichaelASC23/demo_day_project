@@ -138,6 +138,28 @@ html {
     align-items: center;
 }
 
-iframe{
-    /* display: none; */
+.iframe{
+    display:none;
 }
+
+h1 {
+    text-decoration: underline;
+}
+
+#educationDv {
+    display: flex;
+    
+}
+
+footer {
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+#api {
+    padding-left: 5px;
+    text-decoration: unset;
+}
+

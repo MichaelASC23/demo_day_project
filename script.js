@@ -26,8 +26,6 @@ logo.onclick = function(event){
 }
 
 
-
-
 //Search button
 searchBtn.onclick = function(event){
     console.log("Clicked Button");
