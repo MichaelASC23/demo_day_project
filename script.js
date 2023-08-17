@@ -50,7 +50,7 @@ searchBtn.onclick = function(event){
 
 
     //Miami Search Conditional
-    if(input.value == "Miami" || input.value == "miami") {
+    else if(input.value == "Miami" || input.value == "miami") {
         // Change from main.html to city.html
         location.href = "city.html";
 
@@ -72,7 +72,7 @@ searchBtn.onclick = function(event){
     }
 
     //Boston Search Conditional
-    if(input.value =="Boston" || input.value == "boston") {
+    else if(input.value =="Boston" || input.value == "boston") {
         // Change from main.html to city.html
         location.href = "city.html";
 
@@ -81,7 +81,7 @@ searchBtn.onclick = function(event){
     }
 
     // Los Angeles Search Conditional 
-    if(input.value == "Los Angeles" || input.value == "los angeles") {
+    else if(input.value == "Los Angeles" || input.value == "los angeles") {
         // Change from main.html to city.html
         location.href = "city.html";
 
@@ -90,7 +90,7 @@ searchBtn.onclick = function(event){
     }
 
     // Seattle Search Conditional
-    if(input.value == "Seattle" || input.value == "seattle") {
+    else if(input.value == "Seattle" || input.value == "seattle") {
         // Change from main.html to city.html
         location.href = "city.html";
 
@@ -99,7 +99,7 @@ searchBtn.onclick = function(event){
     }
 
     // Denver Search Conditional 
-    if(input.value == "Denver" || input.value == "denver") {
+    else if(input.value == "Denver" || input.value == "denver") {
         // Change from main.html to city.html
         location.href = "city.html";
 
@@ -108,7 +108,7 @@ searchBtn.onclick = function(event){
     }
 
     // San Francisco Search Conditional
-    if(input.value == 'San Francisco' || input.value == 'san francisco') {
+    else if(input.value == 'San Francisco' || input.value == 'san francisco') {
         // Change from main.html to city.html
         location.href = 'city.html'
        
@@ -118,7 +118,7 @@ searchBtn.onclick = function(event){
     }
 
     // Atlanta Search Conditional    
-    if(input.value == 'Atlanta' || input.value == 'atlanta') {
+    else if(input.value == 'Atlanta' || input.value == 'atlanta') {
         // Change from main.html to city.html
         location.href = 'city.html'
 
@@ -127,7 +127,7 @@ searchBtn.onclick = function(event){
     }
 
     // Chicago Search Conditional    
-    if(input.value == 'Chicago' || input.value == 'chicago') {
+    else if(input.value == 'Chicago' || input.value == 'chicago') {
         // Change from main.html to city.html
         location.href = 'city.html'
 
@@ -137,7 +137,7 @@ searchBtn.onclick = function(event){
     }
 
     // Washington DC Search Conditional    
-    if(input.value == 'Washington DC' || input.value == 'washington dc') {
+    else if(input.value == 'Washington DC' || input.value == 'washington dc') {
         // Change from main.html to city.html
         location.href = 'city.html'
 
@@ -145,6 +145,13 @@ searchBtn.onclick = function(event){
         const washingtonsurl = "https://api.teleport.org/api/urban_areas/teleport%3Adqcjq/details/"
     }
 
+    else if(input.value == ''){
+        alert("Please enter a city");
+    }
+
+    else {
+        alert("Sorry, this city is not available");
+    }
 
 }
 

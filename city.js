@@ -89,59 +89,65 @@ searchBtn.onclick = function(event){
 
 
     //Miami Search Conditional
-    if(input.value == "Miami" || input.value == "miami") {
+    else if(input.value == "Miami" || input.value == "miami") {
         searchMiami();
     }
 
     //Boston Search Conditional
-    if(input.value =="Boston" || input.value == "boston") {
+    else if(input.value =="Boston" || input.value == "boston") {
         searchBoston();
 
     }
 
     // Los Angeles Search Conditional 
-    if(input.value == "Los Angeles" || input.value == "los angeles") {
+    else if(input.value == "Los Angeles" || input.value == "los angeles") {
        searchLosAngeles();
     }
 
     // Seattle Search Conditional
-    if(input.value == "Seattle" || input.value == "seattle") {
+    else if(input.value == "Seattle" || input.value == "seattle") {
         searchSeattle();
 
     }
 
     // Denver Search Conditional 
-    if(input.value == "Denver" || input.value == "denver") {
+    else if(input.value == "Denver" || input.value == "denver") {
         searchDenver();
 
     }
 
     // San Fransisco Search Conditional
-    if(input.value == 'San Francisco' || input.value == 'san francisco') {
+    else if(input.value == 'San Francisco' || input.value == 'san francisco') {
         searchSanFrans();
 
-    
 
     }
 
     // Atlanta Search Conditional    
-    if(input.value == 'Atlanta' || input.value == 'atlanta') {
+    else if(input.value == 'Atlanta' || input.value == 'atlanta') {
         searchAtlanta();
 
     }
 
     // Chicago Search Conditional    
-    if(input.value == 'Chicago' || input.value == 'chicago') {
+    else if(input.value == 'Chicago' || input.value == 'chicago') {
        searchChicago();
 
     
     }
 
     // Washington DC Search Conditional    
-    if(input.value == 'Washington DC' || input.value == 'washington dc') {
+    else if(input.value == 'Washington DC' || input.value == 'washington dc') {
         searchWashington();
     }
 
+    else if(input.value == ''){
+        alert("Please enter a city");
+    }
+
+    else {
+        alert("Sorry this city is not available");
+    }
 }
 
 
